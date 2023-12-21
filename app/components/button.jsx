@@ -1,7 +1,7 @@
 const Button = ({ btnBgColor, btnColor, btnMarginTop, btnText, onClick }) => {
     return (
       <button
-        className="rounded-full w-16 h-6"
+        className="rounded-full "
         style={{
           backgroundColor: btnBgColor,
           width: '320px',

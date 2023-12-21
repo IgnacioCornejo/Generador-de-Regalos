@@ -5,6 +5,8 @@ import Dot from './components/dots';
 import H1 from './components/h1';
 import Button from './components/button';
 import Paragraph from './components/p';
+import Button2 from './components/button2';
+import H2 from './components/h2';
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(1); // State to track the current page
@@ -96,7 +98,42 @@ export default function Home() {
               btnText="Atras"
               onClick={handlePrevPage}
             />
+             
+          
           </>
+          
+        )}
+        {currentPage === 4 && (
+          <>
+          <H2
+          h2Text="¿Que relacion tenes con esa "/>
+          <H1
+          h1Text=" persona especial?"/>
+          <Paragraph
+          pText="random paragraph"/>
+          <Button2
+          btn2Text="Relative"/>
+          <Button2
+          btn2Text="Couple"/>
+          <Button2
+          btn2Text="Friend"/>
+          <Button2
+          btn2Text="Co-worker"/>
+          <Button
+              btnBgColor="#6750A4"
+              btnColor="white"
+              btnMarginTop="100px"
+              btnText="Siguiente"
+              onClick={handleNextPage}/>
+              <Button
+              btnBgColor="#79747E"
+              btnColor="6750A4"
+              btnMarginTop="10px"
+              btnText="Atras"
+              onClick={handlePrevPage}
+            />
+          </>
+          
         )}
       </div>
     </>
