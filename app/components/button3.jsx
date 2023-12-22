@@ -29,12 +29,12 @@ const Button3 = ({ btn3Text, selected, onClick }) => {
         width: '320px',
         height: '56px',
         backgroundColor: selected ? '#6750A4' : (hovered ? '#8F7CE9' : '#C8C4C4'),
+        color: selected ? 'white' : 'black',
       }}
       onClick={onClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      
       {btn3Text}
     </button>
   );
