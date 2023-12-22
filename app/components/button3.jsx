@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Button2 = ({ btn2Text, selected, onClick }) => {
+const Button3 = ({ btn3Text, selected, onClick }) => {
   const [hovered, setHovered] = useState(false); // State to track hover
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Button2 = ({ btn2Text, selected, onClick }) => {
 
   return (
     <button
-      className="rounded-lg flex items-center justify-start mb-2"
+      className="rounded-lg flex items-center justify-center mb-2"
       style={{
         width: '320px',
         height: '56px',
@@ -34,10 +34,10 @@ const Button2 = ({ btn2Text, selected, onClick }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <img className="w-6 h-6 mr-4 ml-4" src="/personIcon.svg" alt="Person Icon" />
-      {btn2Text}
+      
+      {btn3Text}
     </button>
   );
 };
 
-export default Button2;
+export default Button3;
