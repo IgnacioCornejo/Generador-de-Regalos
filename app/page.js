@@ -9,13 +9,15 @@ import Button2 from './components/button2';
 import H2 from './components/h2';
 import Button3 from './components/button3';
 import Button4 from './components/button4';
+import  gifts from './giftsDatabase'
+
 
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(1); // State to track the current page
 
-  const [selectedButton2, setSelectedButton2] = useState(null);
-  const [selectedButton3, setSelectedButton3] = useState(null);
+  const [selectedButton2, setSelectedButton2] = useState('');
+  const [selectedButton3, setSelectedButton3] = useState('');
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleNextPage = () => {
@@ -26,27 +28,68 @@ export default function Home() {
   };
   const handleSelectButton2 = (buttonText) => {
     setSelectedButton2(buttonText);
+    setUserSelections(prevSelections => ({
+      ...prevSelections,
+      relacion: buttonText // Update the 'relacion' property in userSelections
+    }));
   };
 
 
   const handleSelectButton3 = (buttonText) => {
     setSelectedButton3(buttonText);
+    setUserSelections(prevSelections => ({
+      ...prevSelections,
+      edad: buttonText // Update the 'edad' property in userSelections
+    }));
   };
   const handleSelectButton4 = (buttonText) => {
     const isSelected = selectedOptions.includes(buttonText);
 
     if (isSelected) {
-      // If the button is already selected, remove it from the options
       setSelectedOptions(prevOptions =>
         prevOptions.filter(option => option !== buttonText)
       );
+      setUserSelections(prevSelections => ({
+        ...prevSelections,
+        gustos: prevSelections.gustos.filter(option => option !== buttonText) // Remove deselected option
+      }));
     } else {
-      // If the button is not selected, add it to the options
       setSelectedOptions(prevOptions => [...prevOptions, buttonText]);
+      setUserSelections(prevSelections => ({
+        ...prevSelections,
+        gustos: [...prevSelections.gustos, buttonText] // Add selected option
+      }));
     }
   };
 
+  const [userSelections, setUserSelections] = useState({
+    relacion: '',
+    edad: '',
+    gustos: ''
+  });
 
+  console.log(gifts);
+  console.log('User Selections:', userSelections);
+
+  
+
+  
+  
+  const storedGiftsString = localStorage.getItem('giftsData');
+const storedGifts = JSON.parse(storedGiftsString); // Parse the stored string back into an array
+
+const filteredGifts = storedGifts.filter((gift) => {
+  const { relacion, edad, gustos } = userSelections;
+  
+  const isRelacionMatch = gift.relacion.includes(relacion);
+  const isEdadMatch = gift.edad.min <= parseInt(edad) && gift.edad.max >= parseInt(edad);
+  
+  // Check if 'gustos' is an array before using 'some()'
+  const areGustosMatch = Array.isArray(gift.gustos) && Array.isArray(gustos) &&
+    gustos.some((gusto) => Array.isArray(gift.gustos) && gift.gustos.includes(gusto));
+  
+  return isRelacionMatch && isEdadMatch && areGustosMatch;
+});
 
 
   return (
@@ -142,24 +185,24 @@ export default function Home() {
             <Paragraph
               pText="random paragraph" />
             <Button2
-              btn2Text="Relative"
-              selected={selectedButton2 === 'Relative'}
-              onClick={() => handleSelectButton2('Relative')}
+              btn2Text="Familiar"
+              selected={selectedButton2 === 'Familiar'}
+              onClick={() => handleSelectButton2('Familiar')}
             />
             <Button2
-              btn2Text="Couple"
-              selected={selectedButton2 === 'Couple'}
-              onClick={() => handleSelectButton2('Couple')}
+              btn2Text="Pareja"
+              selected={selectedButton2 === 'Pareja'}
+              onClick={() => handleSelectButton2('Pareja')}
             />
             <Button2
-              btn2Text="Friend"
-              selected={selectedButton2 === 'Friend'}
-              onClick={() => handleSelectButton2('Friend')}
+              btn2Text="Amigo"
+              selected={selectedButton2 === 'Amigo'}
+              onClick={() => handleSelectButton2('Amigo')}
             />
             <Button2
-              btn2Text="Co-worker"
-              selected={selectedButton2 === 'Co-worker'}
-              onClick={() => handleSelectButton2('Co-worker')}
+              btn2Text="Compañero Laboral"
+              selected={selectedButton2 === 'Compañero Laboral'}
+              onClick={() => handleSelectButton2('Compañero Laboral')}
             />
             <Button
               btnBgColor="#6750A4"
@@ -186,24 +229,24 @@ export default function Home() {
             <Paragraph
               pText="random paragraph" />
             <Button3
-              btn3Text="10-20"
-              selected={selectedButton3 === '10-20'}
-              onClick={() => handleSelectButton3('10-20')}
+              btn3Text="0-5"
+              selected={selectedButton3 === '0-5'}
+              onClick={() => handleSelectButton3('0-5')}
             />
             <Button3
-              btn3Text="20-30"
-              selected={selectedButton3 === '20-30'}
-              onClick={() => handleSelectButton3('20-30')}
+              btn3Text="6-12"
+              selected={selectedButton3 === '6-12'}
+              onClick={() => handleSelectButton3('6-12')}
             />
             <Button3
-              btn3Text="30-40"
-              selected={selectedButton3 === '30-40'}
-              onClick={() => handleSelectButton3('30-40')}
+              btn3Text="13-18"
+              selected={selectedButton3 === '13-18'}
+              onClick={() => handleSelectButton3('13-18')}
             />
             <Button3
-              btn3Text="40-50"
-              selected={selectedButton3 === '40-50'}
-              onClick={() => handleSelectButton3('40-50')}
+              btn3Text="19+"
+              selected={selectedButton3 === '19+'}
+              onClick={() => handleSelectButton3('19+')}
             />
             <Button
               btnBgColor="#6750A4"
@@ -230,40 +273,40 @@ export default function Home() {
               pText="random paragraph" />
             <div className="flex space-x-4">
               <Button4
-                btn4Text="sports"
+                btn4Text="Musica"
                 iconImg="/sportsIcon.svg"
-                selected={selectedOptions.includes('sports')}
-                onClick={() => handleSelectButton4('sports')} />
+                selected={selectedOptions.includes('Musica')}
+                onClick={() => handleSelectButton4('Musica')} />
               <Button4
-                btn4Text="technology"
+                btn4Text="Tecnologia"
                 iconImg="/sportsIcon.svg"
-                selected={selectedOptions.includes('technology')}
-                onClick={() => handleSelectButton4('technology')} />
+                selected={selectedOptions.includes('Tecnologia')}
+                onClick={() => handleSelectButton4('Tecnologia')} />
             </div>
             <div className="flex space-x-4">
               <Button4
-                btn4Text="art"
+                btn4Text="Arte"
                 iconImg="/sportsIcon.svg"
-                selected={selectedOptions.includes('art')}
-                onClick={() => handleSelectButton4('art')}
+                selected={selectedOptions.includes('Arte')}
+                onClick={() => handleSelectButton4('Arte')}
               />
               <Button4
-                btn4Text="food"
+                btn4Text="Cocina"
                 iconImg="/sportsIcon.svg"
-                selected={selectedOptions.includes('food')}
-                onClick={() => handleSelectButton4('food')} />
+                selected={selectedOptions.includes('Cocina')}
+                onClick={() => handleSelectButton4('Cocina')} />
             </div>
             <div className="flex space-x-4">
               <Button4
-                btn4Text="books"
+                btn4Text="Libros"
                 iconImg="/sportsIcon.svg"
-                selected={selectedOptions.includes('books')}
-                onClick={() => handleSelectButton4('books')} />
+                selected={selectedOptions.includes('Libros')}
+                onClick={() => handleSelectButton4('Libros')} />
               <Button4
-                btn4Text="games"
+                btn4Text="Juegos"
                 iconImg="/sportsIcon.svg"
-                selected={selectedOptions.includes('games')}
-                onClick={() => handleSelectButton4('games')} />
+                selected={selectedOptions.includes('Juegos')}
+                onClick={() => handleSelectButton4('Juegos')} />
             </div>
             <Button
               btnBgColor="#6750A4"
@@ -283,7 +326,7 @@ export default function Home() {
         )}
         {currentPage === 7 && (
           <>
-            <img className="w-52 h-52 mb-4" src="/feedbackImg.svg" alt="Screen 2"></img>
+            <img className="w-52 h-52 mb-4 mt-10" src="/feedbackImg.svg" alt="Screen 2"></img>
             <H2 h2Text="Felicitaciones completaste los" />
             <H1 h1Text="pasos para que elijamos tu regalo" />
             <Button
@@ -310,6 +353,12 @@ export default function Home() {
               pText="Te dejamos una lista de posibles regalos para la"/>
               <Paragraph
           pText="persona seleccionada. ¡Que lo disfrutes!"/>
+
+{filteredGifts.map((gift) => (
+      <div key={gift.name}>{gift.name}</div>
+    ))}
+
+          
           </>
           
       
