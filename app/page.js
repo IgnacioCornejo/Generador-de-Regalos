@@ -9,7 +9,7 @@ import Button2 from './components/button2';
 import H2 from './components/h2';
 import Button3 from './components/button3';
 import Button4 from './components/button4';
-import  gifts from './giftsDatabase'
+import gifts from './giftsDatabase'
 
 
 
@@ -26,6 +26,10 @@ export default function Home() {
   const handlePrevPage = () => {
     setCurrentPage(prevPage => Math.max(prevPage - 1, 1)); // Function to decrement page number
   };
+
+
+
+
   const handleSelectButton2 = (buttonText) => {
     setSelectedButton2(buttonText);
     setUserSelections(prevSelections => ({
@@ -71,25 +75,25 @@ export default function Home() {
   console.log(gifts);
   console.log('User Selections:', userSelections);
 
-  
 
-  
-  
+
+
+
   const storedGiftsString = localStorage.getItem('giftsData');
-const storedGifts = JSON.parse(storedGiftsString); // Parse the stored string back into an array
+  const storedGifts = JSON.parse(storedGiftsString); // Parse the stored string back into an array
 
-const filteredGifts = storedGifts.filter((gift) => {
-  const { relacion, edad, gustos } = userSelections;
-  
-  const isRelacionMatch = gift.relacion.includes(relacion);
-  const isEdadMatch = gift.edad.min <= parseInt(edad) && gift.edad.max >= parseInt(edad);
-  
-  // Check if 'gustos' is an array before using 'some()'
-  const areGustosMatch = Array.isArray(gift.gustos) && Array.isArray(gustos) &&
-    gustos.some((gusto) => Array.isArray(gift.gustos) && gift.gustos.includes(gusto));
-  
-  return isRelacionMatch && isEdadMatch && areGustosMatch;
-});
+  const filteredGifts = storedGifts.filter((gift) => {
+    const { relacion, edad, gustos } = userSelections;
+
+    const isRelacionMatch = gift.relacion.includes(relacion);
+    const isEdadMatch = gift.edad.min <= parseInt(edad) && gift.edad.max >= parseInt(edad);
+
+    // Check if 'gustos' is an array before using 'some()'
+    const areGustosMatch = Array.isArray(gift.gustos) && Array.isArray(gustos) &&
+      gustos.some((gusto) => Array.isArray(gift.gustos) && gift.gustos.includes(gusto));
+
+    return isRelacionMatch && isEdadMatch && areGustosMatch;
+  });
 
 
   return (
@@ -349,20 +353,44 @@ const filteredGifts = storedGifts.filter((gift) => {
           <>
             <H1
               h1Text="felicitaciones aca esta tu regalo" />
-              <Paragraph
-              pText="Te dejamos una lista de posibles regalos para la"/>
-              <Paragraph
-          pText="persona seleccionada. ¡Que lo disfrutes!"/>
+            <Paragraph
+              pText="Te dejamos una lista de posibles regalos para la" />
+            <Paragraph
+              pText="persona seleccionada. ¡Que lo disfrutes!" />
 
-{filteredGifts.map((gift) => (
-      <div key={gift.name}>{gift.name}</div>
-    ))}
+            {filteredGifts.map((gift, index) => (
+              <div className='mt-5' style={{ color: "red", textAlign: "Center" }} key={gift.name}>
+                <div>{gift.name}</div>
+                {index !== filteredGifts.length - 1 && <hr className="mt-3" style={{ borderWidth: "1px", width: '320px', }} />} {/* Add <hr /> if not the last gift */}
+              </div>
+            ))}
 
-          
+            <H1
+              h1Text="Algunos lugares donde comprar estos regalos:" />
+
+            <div  className="flex space-x-8 mt-16 mb-5">
+            <a href="https://www.amazon.com/ref=nav_logo" target="_blank"><img className="w-20 h-10 mb-4" src="/amazonLogo.svg" alt="Screen 1"></img></a>
+            <a href="https://best.aliexpress.com/?spm=a2g0o.best.logo.1.3e1322aeaSAZDo&gatewayAdapt=glo2esp&browser_redirect=true" target="_blank"><img className="w-20 h-10 mb-4" src="/aliexpressLogo.svg" alt="Screen 1"></img></a>
+
+            </div>
+            <div className="flex space-x-8">
+            <a href="https://www.mercadolibre.com.ar/" target="_blank"><img className="w-20 h-15 mb-4" src="/mercadolibreLogo.svg" alt="Screen 1"></img></a>
+            <a href="https://www.ebay.com/" target="_blank"><img className="w-20 h-10 mb-4" src="/ebayLogo.svg" alt="Screen 1"></img></a>
+
+            </div>
+
+            <Button
+              btnBgColor="#6750A4"
+              btnColor="white"
+              btnMarginTop="100px"
+              btnText="Volver al inicio"
+              onClick={() => setCurrentPage(4)}
+            />
+
           </>
-          
-      
-          
+
+
+
         )}
 
       </div>

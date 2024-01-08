@@ -3,7 +3,7 @@
 const Paragraph = ({pText}) => {
   return (
    <>
-   <p className="text-sm">{pText} </p>
+   <p className="text-sm ">{pText} </p>
    </>
   )
 }
