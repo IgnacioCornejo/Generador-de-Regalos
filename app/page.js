@@ -79,21 +79,18 @@ export default function Home() {
 
 
 
-  const storedGiftsString = localStorage.getItem('giftsData');
-  const storedGifts = JSON.parse(storedGiftsString); // Parse the stored string back into an array
+  if (typeof window !== 'undefined') {
+    const storedGiftsString = localStorage.getItem('giftsData');
+    const storedGifts = JSON.parse(storedGiftsString || '[]');
 
-  const filteredGifts = storedGifts.filter((gift) => {
-    const { relacion, edad, gustos } = userSelections;
-
-    const isRelacionMatch = gift.relacion.includes(relacion);
-    const isEdadMatch = gift.edad.min <= parseInt(edad) && gift.edad.max >= parseInt(edad);
-
-    // Check if 'gustos' is an array before using 'some()'
-    const areGustosMatch = Array.isArray(gift.gustos) && Array.isArray(gustos) &&
-      gustos.some((gusto) => Array.isArray(gift.gustos) && gift.gustos.includes(gusto));
-
-    return isRelacionMatch && isEdadMatch && areGustosMatch;
-  });
+    const filteredGifts = storedGifts.filter((gift) => {
+      const { relacion, edad, gustos } = userSelections;
+      const isRelacionMatch = gift.relacion.includes(relacion);
+      const isEdadMatch = gift.edad.min <= parseInt(edad) && gift.edad.max >= parseInt(edad);
+      const areGustosMatch = Array.isArray(gift.gustos) && Array.isArray(gustos) &&
+        gustos.some((gusto) => Array.isArray(gift.gustos) && gift.gustos.includes(gusto));
+      return isRelacionMatch && isEdadMatch && areGustosMatch;
+    });
 
 
   return (
@@ -374,7 +371,7 @@ export default function Home() {
 
             </div>
             <div className="flex space-x-8">
-            <a href="https://www.mercadolibre.com.ar/" target="_blank"><img className="w-20 h-15 mb-4" src="/mercadolibreLogo.svg" alt="Screen 1"></img></a>
+            <a href="https://www.mercadolibre.com.ar/" target="_blank"><img className="w- h-15 mb-4" src="/mercadolibreLogo.svg" alt="Screen 1"></img></a>
             <a href="https://www.ebay.com/" target="_blank"><img className="w-20 h-10 mb-4" src="/ebayLogo.svg" alt="Screen 1"></img></a>
 
             </div>
@@ -396,4 +393,6 @@ export default function Home() {
       </div>
     </>
   );
+}
+
 }
