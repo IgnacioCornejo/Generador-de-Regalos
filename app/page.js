@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useState } from 'react';
 import Dot from './components/dots';
 import H1 from './components/h1';
@@ -77,11 +78,15 @@ export default function Home() {
 
 
 
- let storedGiftsString ="";
-if (typeof window !== 'undefined') {
-   storedGiftsString = localStorage.getItem('giftsData');
-}
-  const storedGifts = JSON.parse(storedGiftsString); // Parse the stored string back into an array
+  const [storedGifts, setStoredGifts] = useState([]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const storedGiftsString = localStorage.getItem('giftsData');
+      const parsedGifts = storedGiftsString ? JSON.parse(storedGiftsString) : [];
+      setStoredGifts(parsedGifts);
+    }
+  }, []); // Empty dependency array ensures this effect runs only once on mount on the client side
 
   const filteredGifts = storedGifts.filter((gift) => {
     const { relacion, edad, gustos } = userSelections;
