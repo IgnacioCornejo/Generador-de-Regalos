@@ -76,7 +76,9 @@ export default function Home() {
   console.log(gifts);
   console.log('User Selections:', userSelections);
 
-
+  useEffect(() => {
+    localStorage.setItem('giftsData', JSON.stringify(gifts));
+  }, []);
 
   const [storedGifts, setStoredGifts] = useState([]);
 

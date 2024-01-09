@@ -17,6 +17,6 @@ const gifts = [
 ];
 export default gifts;
 
-localStorage.setItem('giftsData', JSON.stringify(gifts));
+
 
 
