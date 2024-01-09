@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import {useEffect } from 'react';
+import {useState } from 'react';
 import Dot from './components/dots';
 import H1 from './components/h1';
 import Button from './components/button';
