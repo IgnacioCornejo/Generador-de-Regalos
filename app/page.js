@@ -286,32 +286,32 @@ export default function Home() {
             <div className="flex space-x-4">
               <Button4
                 btn4Text="Musica"
-                iconImg="/sportsIcon.svg"
+                iconImg="/musicIcon.svg"
                 selected={selectedOptions.includes('Musica')}
                 onClick={() => handleSelectButton4('Musica')} />
               <Button4
                 btn4Text="Tecnologia"
-                iconImg="/sportsIcon.svg"
+                iconImg="/technologyIcon.svg"
                 selected={selectedOptions.includes('Tecnologia')}
                 onClick={() => handleSelectButton4('Tecnologia')} />
             </div>
             <div className="flex space-x-4">
               <Button4
                 btn4Text="Arte"
-                iconImg="/sportsIcon.svg"
+                iconImg="/artIcon.svg"
                 selected={selectedOptions.includes('Arte')}
                 onClick={() => handleSelectButton4('Arte')}
               />
               <Button4
                 btn4Text="Cocina"
-                iconImg="/sportsIcon.svg"
+                iconImg="/foodIcon.svg"
                 selected={selectedOptions.includes('Cocina')}
                 onClick={() => handleSelectButton4('Cocina')} />
             </div>
             <div className="flex space-x-4">
               <Button4
                 btn4Text="Libros"
-                iconImg="/sportsIcon.svg"
+                iconImg="/bookIcon.svg"
                 selected={selectedOptions.includes('Libros')}
                 onClick={() => handleSelectButton4('Libros')} />
               <Button4
@@ -376,8 +376,10 @@ export default function Home() {
               ))
             }
 
-            <H2
-              h2Text="Algunos lugares donde comprar estos regalos:" />
+            <H1
+              h1Text="Algunos lugares donde comprar" />
+              <H1
+              h1Text="estos regalos:" />
 
             <div className="flex space-x-8 mt-16 mb-5">
               <a href="https://www.amazon.com/ref=nav_logo" target="_blank"><img className="w-20 h-10 mb-4" src="/amazonLogo.svg" alt="Screen 1"></img></a>
@@ -393,7 +395,7 @@ export default function Home() {
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
-              btnMarginTop="100px"
+              btnMarginTop="50px"
               btnText="Volver al inicio"
               onClick={() => setCurrentPage(4)}
             />
