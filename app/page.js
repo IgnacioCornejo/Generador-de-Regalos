@@ -12,6 +12,9 @@ import Button3 from './components/button3';
 import Button4 from './components/button4';
 import gifts from './giftsDatabase'
 
+import { faUser,faPalette } from '@fortawesome/free-solid-svg-icons';
+
+
 
 
 export default function Home() {
@@ -109,6 +112,7 @@ export default function Home() {
       <div className="flex flex-col items-center">
         {currentPage === 1 && (
           <>
+          
             <Dot
               backgroundColor1="#6750A4"
               backgroundColor2="#D9D9D9"
@@ -117,8 +121,9 @@ export default function Home() {
             <img className="w-52 h-52 mb-4" src="/imagenScreen1.svg" alt="Screen 1"></img>
             <H1 h1Text="Vas a poder elegír para quién es" />
             <H1 h1Text="el regalo" />
-            <Paragraph pText="Tene en cuenta que podes seleccionarlo" />
-            <Paragraph pText="las veces que quieras" />
+            <div className='mt-4'></div>
+            <Paragraph pText="Tene en cuenta que estas eligiendo el tipo" />
+            <Paragraph pText="de relacion que tenes con el destinatario" />
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
@@ -137,8 +142,9 @@ export default function Home() {
               backgroundColor3="#D9D9D9"
             />
             <img className="w-52 h-52 mb-4" src="/imagenScreen2.svg" alt="Screen 2"></img>
-            <H1 h1Text="Vas a poder elegír para quién es" />
-            <H1 h1Text="el regalo" />
+            <H1 h1Text="Vas a poder elegír la edad" />
+            <H1 h1Text="del destinatario" />
+            <div className='mt-4'></div>
             <Paragraph pText="Tene en cuenta que podes seleccionarlo" />
             <Paragraph pText="las veces que quieras" />
             <Button
@@ -149,11 +155,12 @@ export default function Home() {
               onClick={handleNextPage}
             />
             <Button
-              btnBgColor="#79747E"
-              btnColor="black"
+              btnBgColor="white"
+              btnColor="#6750A4"
               btnMarginTop="10px"
               btnText="Atras"
               onClick={handlePrevPage}
+              btnBordercolor="2px solid #6750A4"
             />
           </>
         )}
@@ -165,10 +172,11 @@ export default function Home() {
               backgroundColor3="#6750A4"
             />
             <img className="w-52 h-52 mb-4" src="/imagenScreen3.svg" alt="Screen 2"></img>
-            <H1 h1Text="Vas a poder elegír para quién es" />
-            <H1 h1Text="el regalo" />
-            <Paragraph pText="Tene en cuenta que podes seleccionarlo" />
-            <Paragraph pText="las veces que quieras" />
+            <H1 h1Text="Vas a poder elegír los gustos" />
+            <H1 h1Text="del destinatario" />
+            <div className='mt-4'></div>
+            <Paragraph pText="Tene en cuenta estas seleccionando" />
+            <Paragraph pText="los gustos y aficiones del destinatario" />
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
@@ -177,11 +185,12 @@ export default function Home() {
               onClick={handleNextPage}
             />
             <Button
-              btnBgColor="#79747E"
-              btnColor="black"
+              btnBgColor="white"
+              btnColor="#6750A4"
               btnMarginTop="10px"
               btnText="Atras"
               onClick={handlePrevPage}
+              btnBordercolor="2px solid #6750A4"
             />
 
 
@@ -194,8 +203,9 @@ export default function Home() {
               h2Text="¿Que relacion tenes con esa " />
             <H1
               h1Text=" persona especial?" />
-            <Paragraph
-              pText="random paragraph" />
+              <div className='mt-6'></div>
+           
+             
             <Button2
               btn2Text="Familiar"
               selected={selectedButton2 === 'Familiar'}
@@ -223,11 +233,12 @@ export default function Home() {
               btnText="Siguiente"
               onClick={handleNextPage} />
             <Button
-              btnBgColor="#79747E"
-              btnColor="6750A4"
+             btnBgColor="white"
+             btnColor="#6750A4"
               btnMarginTop="10px"
               btnText="Atras"
               onClick={handlePrevPage}
+              btnBordercolor="2px solid #6750A4"
             />
           </>
 
@@ -238,8 +249,9 @@ export default function Home() {
               h2Text="¿Que edad tiene  esa " />
             <H1
               h1Text=" persona especial?" />
-            <Paragraph
-              pText="random paragraph" />
+              <div className='mt-6'></div>
+            
+            
             <Button3
               btn3Text="0-5"
               selected={selectedButton3 === '0-5'}
@@ -267,11 +279,12 @@ export default function Home() {
               btnText="Siguiente"
               onClick={handleNextPage} />
             <Button
-              btnBgColor="#79747E"
-              btnColor="6750A4"
+             btnBgColor="white"
+             btnColor="#6750A4"
               btnMarginTop="10px"
               btnText="Atras"
               onClick={handlePrevPage}
+              btnBordercolor="2px solid #6750A4"
             />
           </>
         )}
@@ -281,42 +294,43 @@ export default function Home() {
               h2Text="¿Que le gusta a esa " />
             <H1
               h1Text=" persona especial?" />
-            <Paragraph
-              pText="random paragraph" />
+             
+            
+              <div className='mt-6'></div>
             <div className="flex space-x-4">
               <Button4
                 btn4Text="Musica"
-                iconImg="/musicIcon.svg"
+                icon={faUser}
                 selected={selectedOptions.includes('Musica')}
                 onClick={() => handleSelectButton4('Musica')} />
               <Button4
                 btn4Text="Tecnologia"
-                iconImg="/technologyIcon.svg"
+                icon={faUser}
                 selected={selectedOptions.includes('Tecnologia')}
                 onClick={() => handleSelectButton4('Tecnologia')} />
             </div>
             <div className="flex space-x-4">
               <Button4
-                btn4Text="Arte"
-                iconImg="/artIcon.svg"
-                selected={selectedOptions.includes('Arte')}
-                onClick={() => handleSelectButton4('Arte')}
+                btn4Text="Viajes"
+                icon={faUser}
+                selected={selectedOptions.includes('Viajes')}
+                onClick={() => handleSelectButton4('Viajes')}
               />
               <Button4
                 btn4Text="Cocina"
-                iconImg="/foodIcon.svg"
+                icon={faUser}
                 selected={selectedOptions.includes('Cocina')}
                 onClick={() => handleSelectButton4('Cocina')} />
             </div>
             <div className="flex space-x-4">
               <Button4
-                btn4Text="Libros"
-                iconImg="/bookIcon.svg"
-                selected={selectedOptions.includes('Libros')}
-                onClick={() => handleSelectButton4('Libros')} />
+                btn4Text="Deportes"
+                icon={faUser}
+                selected={selectedOptions.includes('Deportes')}
+                onClick={() => handleSelectButton4('Deportes')} />
               <Button4
                 btn4Text="Juegos"
-                iconImg="/sportsIcon.svg"
+                icon={faPalette}
                 selected={selectedOptions.includes('Juegos')}
                 onClick={() => handleSelectButton4('Juegos')} />
             </div>
@@ -327,11 +341,12 @@ export default function Home() {
               btnText="Siguiente"
               onClick={handleNextPage} />
             <Button
-              btnBgColor="#79747E"
-              btnColor="6750A4"
+              btnBgColor="white"
+              btnColor="#6750A4"
               btnMarginTop="10px"
               btnText="Atras"
               onClick={handlePrevPage}
+              btnBordercolor="2px solid #6750A4"
             />
           </>
 
@@ -348,11 +363,12 @@ export default function Home() {
               btnText="Siguiente"
               onClick={handleNextPage} />
             <Button
-              btnBgColor="#79747E"
-              btnColor="6750A4"
+              btnBgColor="white"
+              btnColor="#6750A4"
               btnMarginTop="10px"
               btnText="Atras"
               onClick={handlePrevPage}
+              btnBordercolor="2px solid #6750A4"
             />
 
           </>
@@ -360,11 +376,13 @@ export default function Home() {
         {currentPage === 8 && (
           <>
             <H2
-              h2Text="felicitaciones aca esta tu regalo" />
+              h2Text="¡Felicitaciones aca esta tu regalo!" />
+                <div className='mt-4'></div>
             <Paragraph
               pText="Te dejamos una lista de posibles regalos para la" />
             <Paragraph
               pText="persona seleccionada. ¡Que lo disfrutes!" />
+                <div className='mt-4'></div>
 
             {
               filteredGifts.map((gift, index) => (
@@ -380,6 +398,7 @@ export default function Home() {
               h1Text="Algunos lugares donde comprar" />
               <H1
               h1Text="estos regalos:" />
+                <div className='mt-4'></div>
 
             <div className="flex space-x-8 mt-16 mb-5">
               <a href="https://www.amazon.com/ref=nav_logo" target="_blank"><img className="w-20 h-10 mb-4" src="/amazonLogo.svg" alt="Screen 1"></img></a>

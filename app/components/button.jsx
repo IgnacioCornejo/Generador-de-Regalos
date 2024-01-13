@@ -1,4 +1,4 @@
-const Button = ({ btnBgColor, btnColor, btnMarginTop, btnText, onClick }) => {
+const Button = ({ btnBgColor, btnColor, btnMarginTop, btnText, onClick,btnBordercolor }) => {
     return (
       <button
         className="rounded-full "
@@ -7,7 +7,8 @@ const Button = ({ btnBgColor, btnColor, btnMarginTop, btnText, onClick }) => {
           width: '320px',
           height: '40px',
           color: btnColor,
-          marginTop: btnMarginTop
+          marginTop: btnMarginTop,
+          border: btnBordercolor
         }}
         onClick={onClick} // Pass onClick handler to the button element
       >
