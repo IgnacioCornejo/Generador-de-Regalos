@@ -125,7 +125,7 @@ export default function Home() {
               alt="Screen 1"
               width={208}  // Set the desired width
               height={208} // Set the desired height
-              className="w-52 h-52 mb-4"
+              className="mb-4"
             />
             <H1 h1Text="Vas a poder elegír para quién es" />
             <H1 h1Text="el regalo" />
@@ -157,7 +157,7 @@ export default function Home() {
               alt="Screen 1"
               width={208}  // Set the desired width
               height={208} // Set the desired height
-              className="w-52 h-52 mb-4"
+              
             />
             <H1 h1Text="Vas a poder elegír la edad" />
             <H1 h1Text="del destinatario" />
@@ -195,7 +195,7 @@ export default function Home() {
               alt="Screen 1"
               width={208}  // Set the desired width
               height={208} // Set the desired height
-              className="w-52 h-52 mb-4"
+              className="mb-4"
             />
             <H1 h1Text="Vas a poder elegír los gustos" />
             <H1 h1Text="del destinatario" />
@@ -382,9 +382,16 @@ export default function Home() {
         )}
         {currentPage === 7 && (
           <>
-            <img className="w-52 h-52 mb-4 mt-10" src="/feedbackImg.svg" alt="Screen 2"></img>
+           
             <H2 h2Text="Felicitaciones completaste los" />
             <H1 h1Text="pasos para que elijamos tu regalo" />
+            <Image
+              src="/feedbackImg.svg"
+              alt="Screen 1"
+              width={208}  // Set the desired width
+              height={208} // Set the desired height
+              className="mt-8 mb-4"
+            />
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
