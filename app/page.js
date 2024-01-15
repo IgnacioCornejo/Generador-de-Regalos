@@ -138,7 +138,7 @@ export default function Home() {
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
-              btnMarginTop="100px"
+              btnMarginTop="75px"
               btnText="Siguiente"
               onClick={handleNextPage}
             />
@@ -169,7 +169,7 @@ export default function Home() {
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
-              btnMarginTop="100px"
+              btnMarginTop="50px"
               btnText="Siguiente"
               onClick={handleNextPage}
             />
@@ -256,7 +256,7 @@ export default function Home() {
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
-              btnMarginTop="100px"
+              btnMarginTop="125px"
               btnText="Siguiente"
               onClick={handleNextPage}
               disabled={selectedButton2 === ''} />
@@ -302,7 +302,7 @@ export default function Home() {
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
-              btnMarginTop="100px"
+              btnMarginTop="150px"
               btnText="Siguiente"
               onClick={handleNextPage}
               disabled={selectedButton3 === ''}
@@ -365,7 +365,7 @@ export default function Home() {
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
-              btnMarginTop="100px"
+              btnMarginTop="175px"
               btnText="Siguiente"
               onClick={handleNextPage}
               disabled={selectedOptions.length === 0} />
@@ -395,7 +395,7 @@ export default function Home() {
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
-              btnMarginTop="100px"
+              btnMarginTop="125px"
               btnText="Siguiente"
               onClick={handleNextPage} />
             <Button
