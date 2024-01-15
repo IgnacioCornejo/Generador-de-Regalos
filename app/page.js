@@ -121,7 +121,7 @@ export default function Home() {
               backgroundColor3="#D9D9D9"
             />
             <Image
-              src="/imagenScreen1.svg"
+              src="/walkthrough1.svg"
               alt="Screen 1"
               width={208}  // Set the desired width
               height={208} // Set the desired height
@@ -429,7 +429,7 @@ export default function Home() {
                 </div>
               ))
             }
-            <div className='mt-6'></div>
+            <div className='mt-8'></div>
             <H1
               h1Text="Algunos lugares donde comprar" />
             <H1
