@@ -12,23 +12,23 @@ import Button3 from './components/button3';
 import Button4 from './components/button4';
 import gifts from './giftsDatabase'
 import Image from 'next/image';
-import { faUser, faPlane, faPuzzlePiece, faMusic, faMobileScreenButton, faUtensils, faBasketball } from '@fortawesome/free-solid-svg-icons';
+import {faPlane, faPuzzlePiece, faMusic, faMobileScreenButton, faUtensils, faBasketball } from '@fortawesome/free-solid-svg-icons';
 
 
 
 
 export default function Home() {
-  const [currentPage, setCurrentPage] = useState(1); // State to track the current page
+  const [currentPage, setCurrentPage] = useState(1); //  seteado de estado pagina actual
 
   const [selectedButton2, setSelectedButton2] = useState('');
   const [selectedButton3, setSelectedButton3] = useState('');
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleNextPage = () => {
-    setCurrentPage(prevPage => prevPage + 1); // Function to increment page number
+    setCurrentPage(prevPage => prevPage + 1); // incremento de numero de pagina
   };
   const handlePrevPage = () => {
-    setCurrentPage(prevPage => Math.max(prevPage - 1, 1)); // Function to decrement page number
+    setCurrentPage(prevPage => Math.max(prevPage - 1, 1)); // disminucion de numero de pagina
   };
 
 
@@ -38,7 +38,7 @@ export default function Home() {
     setSelectedButton2(buttonText);
     setUserSelections(prevSelections => ({
       ...prevSelections,
-      relacion: buttonText // Update the 'relacion' property in userSelections
+      relacion: buttonText // actualizacion de la propiedad de relacion en userSelection
     }));
   };
 
@@ -47,7 +47,7 @@ export default function Home() {
     setSelectedButton3(buttonText);
     setUserSelections(prevSelections => ({
       ...prevSelections,
-      edad: buttonText // Update the 'edad' property in userSelections
+      edad: buttonText // actualizacion de la propiedad de edad en userSelection
     }));
   };
   const handleSelectButton4 = (buttonText) => {
@@ -59,13 +59,13 @@ export default function Home() {
       );
       setUserSelections(prevSelections => ({
         ...prevSelections,
-        gustos: prevSelections.gustos.filter(option => option !== buttonText) // Remove deselected option
+        gustos: prevSelections.gustos.filter(option => option !== buttonText) // sacar opcion deseleccionada
       }));
     } else {
       setSelectedOptions(prevOptions => [...prevOptions, buttonText]);
       setUserSelections(prevSelections => ({
         ...prevSelections,
-        gustos: [...prevSelections.gustos, buttonText] // Add selected option
+        gustos: [...prevSelections.gustos, buttonText] // agregar opcion seeleccionada
       }));
     }
   };
@@ -112,7 +112,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col items-center">
-        {currentPage === 1 && (
+        {currentPage === 1 && (                        //SCREEN 1
           <>
 
             <Dot
@@ -123,8 +123,8 @@ export default function Home() {
             <Image
               src="/walkthrough1.svg"
               alt="Screen 1"
-              width={208}  // Set the desired width
-              height={208} // Set the desired height
+              width={208}  
+              height={208} 
               className="mb-4"
             />
             <H1 h1Text="Vas a poder elegír para quién es" />
@@ -145,7 +145,7 @@ export default function Home() {
           </>
         )}
 
-        {currentPage === 2 && (
+        {currentPage === 2 && (                           //SCREEN 2
           <>
             <Dot
               backgroundColor1="#D9D9D9"
@@ -155,8 +155,8 @@ export default function Home() {
             <Image
               src="/imagenScreen2.svg"
               alt="Screen 1"
-              width={208}  // Set the desired width
-              height={208} // Set the desired height
+              width={208}  
+              height={208} 
               
             />
             <H1 h1Text="Vas a poder elegír la edad" />
@@ -183,7 +183,7 @@ export default function Home() {
             />
           </>
         )}
-        {currentPage === 3 && (
+        {currentPage === 3 && (                             //SCREEN 3
           <>
             <Dot
               backgroundColor1="#D9D9D9"
@@ -193,8 +193,8 @@ export default function Home() {
             <Image
               src="/imagenScreen3.svg"
               alt="Screen 1"
-              width={208}  // Set the desired width
-              height={208} // Set the desired height
+              width={208}  
+              height={208} 
               className="mb-4"
             />
             <H1 h1Text="Vas a poder elegír los gustos" />
@@ -224,7 +224,7 @@ export default function Home() {
           </>
 
         )}
-        {currentPage === 4 && (
+        {currentPage === 4 && (                                   //SCREEN 4
           <>
             <H2
               h2Text="¿Que relacion tenes con esa " />
@@ -271,7 +271,7 @@ export default function Home() {
           </>
 
         )}
-        {currentPage === 5 && (
+        {currentPage === 5 && (                                  //SCREEN 5
           <>
             <H2
               h2Text="¿Que edad tiene esa persona especial? " />
@@ -317,7 +317,7 @@ export default function Home() {
             />
           </>
         )}
-        {currentPage === 6 && (
+        {currentPage === 6 && (                                        //SCREEN 6
           <>
             <H2
               h2Text="¿Que le gusta a esa persona especial?" />
@@ -380,7 +380,7 @@ export default function Home() {
           </>
 
         )}
-        {currentPage === 7 && (
+        {currentPage === 7 && (                               //SCREEN 7
           <>
            
             <H2 h2Text="Felicitaciones completaste los" />
@@ -388,8 +388,8 @@ export default function Home() {
             <Image
               src="/feedbackImg.svg"
               alt="Screen 1"
-              width={208}  // Set the desired width
-              height={208} // Set the desired height
+              width={208}  
+              height={208} 
               className="mt-8 mb-4"
             />
             <Button
@@ -409,7 +409,7 @@ export default function Home() {
 
           </>
         )}
-        {currentPage === 8 && (
+        {currentPage === 8 && (                                    //SCREEN 8
           <>
             <H2
               h2Text="¡Felicitaciones aca esta tu regalo!" />
