@@ -132,7 +132,7 @@ export default function Home() {
             <div className='mt-4'></div>
 
             <Paragraph pText="Vas a seleccionar la relación que tenés con" />
-            <Paragraph pText=" el destinatario. Si no encontrás una opcion" />
+            <Paragraph pText=" el destinatario. Si no encontrás una opción" />
             <Paragraph pText="exacta, elegí la que mejor se ajuste." />
 
             <Button
@@ -177,7 +177,7 @@ export default function Home() {
               btnBgColor="white"
               btnColor="#6750A4"
               btnMarginTop="10px"
-              btnText="Atras"
+              btnText="Atrás"
               onClick={handlePrevPage}
               btnBordercolor="2px solid #6750A4"
             />
@@ -201,8 +201,8 @@ export default function Home() {
             <H1 h1Text="del destinatario" />
             <div className='mt-4'></div>
             <Paragraph pText="Elegí las categorías que mejor se adapten" />
-            <Paragraph pText="a sus intereses.Si no encuentras una opcion" />
-            <Paragraph pText="exacta, selecciona la más relevante." />
+            <Paragraph pText="a sus intereses.Si no encontrás una opción" />
+            <Paragraph pText="exacta, seleccioná la más relevante." />
 
             <Button
               btnBgColor="#6750A4"
@@ -215,7 +215,7 @@ export default function Home() {
               btnBgColor="white"
               btnColor="#6750A4"
               btnMarginTop="10px"
-              btnText="Atras"
+              btnText="Atrás"
               onClick={handlePrevPage}
               btnBordercolor="2px solid #6750A4"
             />
@@ -227,7 +227,7 @@ export default function Home() {
         {currentPage === 4 && (                                   //SCREEN 4
           <>
             <H2
-              h2Text="¿Que relacion tenes con esa " />
+              h2Text="¿Que relación tenes con esa " />
             <H1
               h1Text=" persona especial?" />
             <div className='mt-6'></div>
@@ -264,7 +264,7 @@ export default function Home() {
               btnBgColor="white"
               btnColor="#6750A4"
               btnMarginTop="10px"
-              btnText="Atras"
+              btnText="Atrás"
               onClick={handlePrevPage}
               btnBordercolor="2px solid #6750A4"
             />
@@ -311,7 +311,7 @@ export default function Home() {
               btnBgColor="white"
               btnColor="#6750A4"
               btnMarginTop="10px"
-              btnText="Atras"
+              btnText="Atrás"
               onClick={handlePrevPage}
               btnBordercolor="2px solid #6750A4"
             />
@@ -373,7 +373,7 @@ export default function Home() {
               btnBgColor="white"
               btnColor="#6750A4"
               btnMarginTop="10px"
-              btnText="Atras"
+              btnText="Atrás"
               onClick={handlePrevPage}
               btnBordercolor="2px solid #6750A4"
             />
@@ -402,7 +402,7 @@ export default function Home() {
               btnBgColor="white"
               btnColor="#6750A4"
               btnMarginTop="10px"
-              btnText="Atras"
+              btnText="Atrás"
               onClick={handlePrevPage}
               btnBordercolor="2px solid #6750A4"
             />
