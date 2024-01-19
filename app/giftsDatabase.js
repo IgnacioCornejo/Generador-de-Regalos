@@ -61,9 +61,22 @@ const gifts = [
     { name: "Luces Led para habitación", relacion: ["Pareja"], edad: { min: 13, max: 18 }, gustos: ["Tecnologia"] },
     { name: "Funda de celular", relacion: ["Pareja"], edad: { min: 13, max: 18 }, gustos: ["Tecnologia"] },
     { name: "Kit de fotografia para Smartphone", relacion: ["Pareja"], edad: { min: 13, max: 18 }, gustos: ["Tecnologia"] },
-    { name: "Cocina eléctrica portátil", relacion: ["Familiar", "Amigo", "Compañero Laboral", "Pareja"], edad: { min: 6, max: 19 }, gustos: ["Cocina","Viajes"] },
-
-
+    { name: "Cocina eléctrica portátil", relacion: ["Familiar", "Amigo", "Compañero Laboral", "Pareja"], edad: { min: 6, max: 19 }, gustos: ["Cocina", "Viajes"] },
+    { name: "Pochoclera", relacion: ["Familiar", "Amigo", "Compañero Laboral", "Pareja"], edad: { min: 6, max: 12 }, gustos: ["Tecnologia", "Cocina"] },
+    { name: "Tablas de quesos y embutidos", relacion: ["Pareja"], edad: { min: 19, max: 19 }, gustos: ["Cocina"] },
+    { name: "Cava", relacion: ["Pareja"], edad: { min: 19, max: 19 }, gustos: ["Cocina", "Tecnologia"] },
+    { name: "Vinilos de colección", relacion: ["Pareja"], edad: { min: 19, max: 19 }, gustos: ["Musica"] },
+    { name: "Proyector de Cine", relacion: ["Pareja"], edad: { min: 19, max: 19 }, gustos: ["Tecnologia"] },
+    { name: "Reloj deportivo inteligente", relacion: ["Pareja"], edad: { min: 19, max: 19 }, gustos: ["Deportes"] },
+    { name: "Auriculares Bluetooth con estuche de carga", relacion: ["Pareja"], edad: { min: 13, max: 18 }, gustos: ["Tecnologia"] },
+    { name: "Juego de mesa para parejas", relacion: ["Pareja"], edad: { min: 19, max: 19 }, gustos: ["Juegos"] },
+    { name: "Videojuego cooperativo", relacion: ["Pareja"], edad: { min: 19, max: 19 }, gustos: ["Juegos"] },
+    { name: "Lámpara de escritorio LED", relacion: ["Compañero Laboral"], edad: { min: 19, max: 19 }, gustos: ["Juegos"] },
+    { name: "Toalla de microfibra deportiva", relacion: ["Compañero Laboral"], edad: { min: 19, max: 19 }, gustos: ["Deportes"] },
+    { name: "Kit de condimentos gourmet", relacion: ["Compañero Laboral"], edad: { min: 19, max: 19 }, gustos: ["Cocina"] },
+    { name: "Adaptador de corriente universal", relacion: ["Compañero Laboral"], edad: { min: 19, max: 19 }, gustos: ["Viajes"] },
+    { name: "Juego de mesa estratégico", relacion: ["Compañero Laboral"], edad: { min: 19, max: 19 }, gustos: ["Juegos"] },
+   
 ];
 export default gifts;
 

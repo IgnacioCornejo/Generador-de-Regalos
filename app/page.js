@@ -207,7 +207,7 @@ export default function Home() {
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
-              btnMarginTop="100px"
+              btnMarginTop="103px"
               btnText="Siguiente"
               onClick={handleNextPage}
             />
@@ -256,7 +256,7 @@ export default function Home() {
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
-              btnMarginTop="125px"
+              btnMarginTop="118px"
               btnText="Siguiente"
               onClick={handleNextPage}
               disabled={selectedButton2 === ''} />
@@ -302,7 +302,7 @@ export default function Home() {
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
-              btnMarginTop="150px"
+              btnMarginTop="146px"
               btnText="Siguiente"
               onClick={handleNextPage}
               disabled={selectedButton3 === ''}
@@ -365,7 +365,7 @@ export default function Home() {
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
-              btnMarginTop="175px"
+              btnMarginTop="186px"
               btnText="Siguiente"
               onClick={handleNextPage}
               disabled={selectedOptions.length === 0} />
@@ -395,7 +395,7 @@ export default function Home() {
             <Button
               btnBgColor="#6750A4"
               btnColor="white"
-              btnMarginTop="125px"
+              btnMarginTop="142px"
               btnText="Siguiente"
               onClick={handleNextPage} />
             <Button
@@ -454,6 +454,7 @@ export default function Home() {
               btnText="Volver al inicio"
               onClick={() => setCurrentPage(4)}
             />
+            <div className='mb-10'></div>
 
           </>
 
